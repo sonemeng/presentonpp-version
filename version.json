@@ -1,6 +1,6 @@
 {
-  "version": "0.9.6-pptb.2",
-  "message": "Presenton++ 0.9.6-pptb.2\n\n- 全面更名 Presenton++（独立应用，可与上游版共存，userData 独立）\n- 全套新图标（logo + ++ 徽标）\n- 生成中断失败卡片：可一键继续生成剩余页\n- 安装包 brotli 压缩优化\n\n完整说明见本仓库 Releases。",
+  "version": "0.9.6-pptb.3",
+  "message": "Presenton++ 0.9.6-pptb.3\n\n- 生成中断卡片支持一键切换渠道并自动续作（无需重开窗口）\n- 中转站不支持 response_format 时自动降级为纯文本 JSON 模式（同渠道重试，不再直接失败）\n- 更新检查器指向自有版本源（本仓库），修复了检查器从未真正运行的缺陷\n\n完整说明见 Releases。",
   "downloads": {
     "linux": "https://github.com/sonemeng/presentonpp-version/releases/latest",
     "mac": "https://github.com/sonemeng/presentonpp-version/releases/latest",
