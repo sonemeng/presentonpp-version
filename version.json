@@ -1,6 +1,6 @@
 {
-  "version": "0.9.6-pptb.3",
-  "message": "Presenton++ 0.9.6-pptb.3\n\n- 生成中断卡片支持一键切换渠道并自动续作（无需重开窗口）\n- 中转站不支持 response_format 时自动降级为纯文本 JSON 模式（同渠道重试，不再直接失败）\n- 更新检查器指向自有版本源（本仓库），修复了检查器从未真正运行的缺陷\n\n完整说明见 Releases。",
+  "version": "0.9.6-pptb.4",
+  "message": "Presenton++ 0.9.6-pptb.4\n\n设置页大改版（其他区四个新面板）：\n- 模型检测：对每个渠道真实发起一次极小对话请求，一眼识破「模型列表正常、实际生成 401/429」的假活渠道\n- 数据清理：查看并清理临时文件/图片搜索缓存/图标向量缓存（不碰 PPT、导出、字体、配置）\n- 生成统计：本地统计生成总数、近 7 天、智能/标准模式、各渠道使用次数\n- 版本与更新：手动检查新版本，直达本仓库 Releases；退出登录等无用项已移除\n\n其他：\n- Smart 模式版式规划器、Smart 页数上限 20→50、导出前系统保存对话框\n- Markdown 上传、生成界面模型选择器前置、toast 全面汉化\n- Sentry/Mixpanel 上游遥测默认关死、帮助页内置且折叠化、SEO 去上游化\n- 更新按钮/GitHub 图标改指自有版本源\n\n完整说明见 Releases。",
   "downloads": {
     "linux": "https://github.com/sonemeng/presentonpp-version/releases/latest",
     "mac": "https://github.com/sonemeng/presentonpp-version/releases/latest",
