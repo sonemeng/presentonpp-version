@@ -1,6 +1,6 @@
 {
-  "version": "0.9.6-pptb.4",
-  "message": "Presenton++ 0.9.6-pptb.4\n\n设置页大改版（其他区四个新面板）：\n- 模型检测：对每个渠道真实发起一次极小对话请求，一眼识破「模型列表正常、实际生成 401/429」的假活渠道\n- 数据清理：查看并清理临时文件/图片搜索缓存/图标向量缓存（不碰 PPT、导出、字体、配置）\n- 生成统计：本地统计生成总数、近 7 天、智能/标准模式、各渠道使用次数\n- 版本与更新：手动检查新版本，直达本仓库 Releases；退出登录等无用项已移除\n\n其他：\n- Smart 模式版式规划器、Smart 页数上限 20→50、导出前系统保存对话框\n- Markdown 上传、生成界面模型选择器前置、toast 全面汉化\n- Sentry/Mixpanel 上游遥测默认关死、帮助页内置且折叠化、SEO 去上游化\n- 更新按钮/GitHub 图标改指自有版本源\n\n完整说明见 Releases。",
+  "version": "0.9.6-pptb.5",
+  "message": "Presenton++ 0.9.6-pptb.5\n\n模板工作室大升级（工业分析 PPT 第一步）：\n- 版式全量导入：上传公司模板时自动把母版里未被使用的全部版式（目录/正文/过渡页等）补成页面一起导入——实测空白模版 5 实际页 + 22 版式 = 27 页全部进布局库，此前只有 5 页\n- 布局重建并发化：按当前渠道 RPM 上限批量并行生成，26 版式导入从约 35 分钟降到 8 分钟\n- 失败不再拖垮整批：单页失败自动重试 2 轮，仍失败的在完成页可见、可单独一键重试\n- 版式名（目录/01-正文等）写入占位提示字并尽量进入布局描述，方便生成时选版式\n- 附带修复：发往 LLM 的模板截图超 200KB 自动压缩，规避中转站 413 报错\n\n完整说明见 Releases。",
   "downloads": {
     "linux": "https://github.com/sonemeng/presentonpp-version/releases/latest",
     "mac": "https://github.com/sonemeng/presentonpp-version/releases/latest",
