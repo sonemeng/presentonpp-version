@@ -1,6 +1,6 @@
 {
-  "version": "0.9.6-pptb.5",
-  "message": "Presenton++ 0.9.6-pptb.5\n\n模板工作室大升级（工业分析 PPT 第一步）：\n- 版式全量导入：上传公司模板时自动把母版里未被使用的全部版式（目录/正文/过渡页等）补成页面一起导入——实测空白模版 5 实际页 + 22 版式 = 27 页全部进布局库，此前只有 5 页\n- 布局重建并发化：按当前渠道 RPM 上限批量并行生成，26 版式导入从约 35 分钟降到 8 分钟\n- 失败不再拖垮整批：单页失败自动重试 2 轮，仍失败的在完成页可见、可单独一键重试\n- 版式名（目录/01-正文等）写入占位提示字并尽量进入布局描述，方便生成时选版式\n- 附带修复：发往 LLM 的模板截图超 200KB 自动压缩，规避中转站 413 报错\n\n完整说明见 Releases。",
+  "version": "0.9.6-pptb.5.1",
+  "message": "Presenton++ 0.9.6-pptb.5.1\n\n热修版（建议所有 pptb.5 用户更新）：\n- 修复导出崩溃：应用放在含 package.json(type:module) 的目录（如仓库 release 目录）内时，导出报「导出您的演示文稿时出现问题」——改用 .cjs 入口并自动注入 commonjs 声明，27 页实测导出成功\n- 中文行距优化：渲染不再按英文估宽，中文行距下限 1.3，密集拥挤页明显改善\n- 修复模板生成的空白页/「12_Blank」怪标题：版式名提示泄漏进布局文本，现已确定性剔除；已导入的模板也已就地清洗，无需重新导入\n- dev 调试模式启动参数修复（影响开发环境，随版发布）\n\n完整说明见 Releases。",
   "downloads": {
     "linux": "https://github.com/sonemeng/presentonpp-version/releases/latest",
     "mac": "https://github.com/sonemeng/presentonpp-version/releases/latest",
