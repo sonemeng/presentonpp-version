@@ -1,6 +1,6 @@
 {
-  "version": "0.9.6-pptb.7",
-  "message": "Presenton++ 0.9.6-pptb.7\n\npptb.6 + pptb.7 双里程碑（建议所有用户更新）：\n- 新增「分析报告」模式：上传现场图片（自动识图）+ Excel/CSV 数据表，一键生成整套分析 PPT——图片精确就位、图表数值与源数据完全一致（数据全程不出本机）\n- 编辑器新增「切换版式」：任意页可在模板版式间切换，文字与已上传图片自动保留，Ctrl+Z 可撤销\n- 修复中文排版重叠：英文模板里中文标题压住正文的问题已根治（自动适配字号 + 生成时按版面限宽）\n- 模板卡片标注「英文排版」提示，帮助选择适合中文的模板\n- 修复导出崩溃与空白页问题（沿用 pptb.5.1）\n\n完整说明见 Releases。",
+  "version": "0.9.6-pptb.7.1",
+  "message": "Presenton++ 0.9.6-pptb.7.1\n\n小版本更新：\n- 帮助页新增「导入模板怎么选模型」指引（含渠道默认模型下架 404 时的处理方法）\n- 内部代码清理（15 处无用代码），无功能变化\n\n主力功能见 pptb.7：分析报告模式 + Excel/CSV 原生图表 + 编辑器切换版式 + 中文排版重叠修复。\n\n完整说明见 Releases。",
   "downloads": {
     "linux": "https://github.com/sonemeng/presentonpp-version/releases/latest",
     "mac": "https://github.com/sonemeng/presentonpp-version/releases/latest",
