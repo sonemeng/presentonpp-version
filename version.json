@@ -1,6 +1,6 @@
 {
-  "version": "0.9.6-pptb.8",
-  "message": "Presenton++ 0.9.6-pptb.8\n\n中文完全体（工业分析线第三步）：\n- 新增中文内置模板「工业蓝」：9 个工业风版式（封面/目录/章节/图文/双图/KPI 指标/图表/明细表/总结），思源黑体原生中文排版，置顶推荐\n- Excel 明细表页：分析模式上传 Excel 后，LLM 只见表头不碰数值，表格内容由本机从源数据绑定（列选择、排序、超限截断），逐格保真\n- 大纲页明细表页显示「明细表页」徽标（列数×行数）\n\n完整说明见 Releases。",
+  "version": "0.9.6-pptb.9",
+  "message": "Presenton++ 0.9.6-pptb.9\n\npptx 原生图表导出（工业分析线第四步收官）：\n- 导出 PPTX 时，图表页的截图图表自动替换为 PowerPoint 原生图表对象：Office / WPS 里可直接改数据、换图型\n- 支持 9 种图型（柱状/堆叠/条形/折线/面积/饼图/环形/雷达等），标题、图例、系列配色与页面一致，位置逐像素对齐\n- 全程本地处理不上传文件；无法替换的图表（如卡片组小图）自动保留原图，导出永不失败\n\n完整说明见 Releases。",
   "downloads": {
     "linux": "https://github.com/sonemeng/presentonpp-version/releases/latest",
     "mac": "https://github.com/sonemeng/presentonpp-version/releases/latest",
