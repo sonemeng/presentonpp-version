@@ -1,0 +1,77 @@
+name: Merge release asset parts
+
+# 代理链路单连接 ~312MB 上限，大安装器分块上传后由 GitHub 云端拼回完整资产。
+# 用法：gh workflow run merge-release-asset.yml -f tag=... -f parts="a b c" -f output=... -f sha256=...
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag (e.g. v0.9.6-pptb.9)"
+        required: true
+      parts:
+        description: "Part asset names, space-separated, in concat order"
+        required: true
+      output:
+        description: "Merged asset filename"
+        required: true
+      sha256:
+        description: "Expected sha256 of the merged file"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download parts
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          mkdir -p parts
+          for part in ${{ inputs.parts }}; do
+            echo "downloading $part"
+            gh release download "${{ inputs.tag }}" -R "$REPO" -p "$part" --dir parts
+          done
+          ls -la parts
+
+      - name: Concatenate and verify
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          cd parts
+          part_list="${{ inputs.parts }}"
+          # shellcheck disable=SC2086
+          cat $part_list > "${{ inputs.output }}"
+          echo "merged size: $(stat -c%s '${{ inputs.output }}')"
+          echo "${{ inputs.sha256 }}  ${{ inputs.output }}" | sha256sum -c -
+
+      - name: Upload merged asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          gh release upload "${{ inputs.tag }}" --clobber -R "$REPO" "parts/${{ inputs.output }}"
+
+      - name: Delete part assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          for part in ${{ inputs.parts }}; do
+            echo "deleting $part"
+            gh release delete-asset "${{ inputs.tag }}" "$part" -y -R "$REPO" || true
+          done
+
+      - name: Final assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: gh release view "${{ inputs.tag }}" -R "$REPO" --json assets -q '.assets[] | "\(.name) \(.size)"'
