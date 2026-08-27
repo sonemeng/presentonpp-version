@@ -1,6 +1,6 @@
 {
-  "version": "0.9.6-pptb.7.1",
-  "message": "Presenton++ 0.9.6-pptb.7.1\n\n小版本更新：\n- 帮助页新增「导入模板怎么选模型」指引（含渠道默认模型下架 404 时的处理方法）\n- 内部代码清理（15 处无用代码），无功能变化\n\n主力功能见 pptb.7：分析报告模式 + Excel/CSV 原生图表 + 编辑器切换版式 + 中文排版重叠修复。\n\n完整说明见 Releases。",
+  "version": "0.9.6-pptb.8",
+  "message": "Presenton++ 0.9.6-pptb.8\n\n中文完全体（工业分析线第三步）：\n- 新增中文内置模板「工业蓝」：9 个工业风版式（封面/目录/章节/图文/双图/KPI 指标/图表/明细表/总结），思源黑体原生中文排版，置顶推荐\n- Excel 明细表页：分析模式上传 Excel 后，LLM 只见表头不碰数值，表格内容由本机从源数据绑定（列选择、排序、超限截断），逐格保真\n- 大纲页明细表页显示「明细表页」徽标（列数×行数）\n\n完整说明见 Releases。",
   "downloads": {
     "linux": "https://github.com/sonemeng/presentonpp-version/releases/latest",
     "mac": "https://github.com/sonemeng/presentonpp-version/releases/latest",
