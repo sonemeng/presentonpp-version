@@ -1,6 +1,6 @@
 {
-  "version": "0.9.6-pptb.9",
-  "message": "Presenton++ 0.9.6-pptb.9\n\npptx 原生图表导出（工业分析线第四步收官）：\n- 导出 PPTX 时，图表页的截图图表自动替换为 PowerPoint 原生图表对象：Office / WPS 里可直接改数据、换图型\n- 支持 9 种图型（柱状/堆叠/条形/折线/面积/饼图/环形/雷达等），标题、图例、系列配色与页面一致，位置逐像素对齐\n- 全程本地处理不上传文件；无法替换的图表（如卡片组小图）自动保留原图，导出永不失败\n\n完整说明见 Releases。",
+  "version": "0.9.6-pptb.10",
+  "message": "Presenton++ 0.9.6-pptb.10\n\n渠道失联不再死循环：\n- 模型服务商连不上时，提示后停留在当前页面，不再被弹回引导页；设置页始终可达，可自行测试/切换渠道\n- 引导页保存自定义渠道前先探测，不可达时明确警告但仍可保存继续\n- 模型 ID 匹配兼容中转站前缀差异（如 deepseek-ai/xxx 与 xxx）\n- 程序不做任何自动切换或修复，渠道状态完全由用户掌控\n\n完整说明见 Releases。",
   "downloads": {
     "linux": "https://github.com/sonemeng/presentonpp-version/releases/latest",
     "mac": "https://github.com/sonemeng/presentonpp-version/releases/latest",
