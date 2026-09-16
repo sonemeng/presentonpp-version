@@ -1,6 +1,6 @@
 {
-  "version": "0.9.6-pptb.10",
-  "message": "Presenton++ 0.9.6-pptb.10\n\n渠道失联不再死循环：\n- 模型服务商连不上时，提示后停留在当前页面，不再被弹回引导页；设置页始终可达，可自行测试/切换渠道\n- 引导页保存自定义渠道前先探测，不可达时明确警告但仍可保存继续\n- 模型 ID 匹配兼容中转站前缀差异（如 deepseek-ai/xxx 与 xxx）\n- 程序不做任何自动切换或修复，渠道状态完全由用户掌控\n\n完整说明见 Releases。",
+  "version": "0.9.6-pptb.11",
+  "message": "Presenton++ 0.9.6-pptb.11\n\n- 修复 Editorial 模板导出时的背景兼容问题\n- 更新桌面端运行时依赖，提升启动稳定性\n\n完整更新说明与下载见 Releases。",
   "downloads": {
     "linux": "https://github.com/sonemeng/presentonpp-version/releases/latest",
     "mac": "https://github.com/sonemeng/presentonpp-version/releases/latest",
