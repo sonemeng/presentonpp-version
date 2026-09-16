@@ -1,32 +1,48 @@
-# presentonpp-version
+# Presenton++
 
-Presenton++ 的版本源仓库。应用内的更新检查器轮询本仓库的 `version.json`，
-发现新版本时在界面底部弹出更新横幅，"Download update" 按钮指向本仓库的
-Releases 页面。
+Presenton++ 是一款本地运行的 AI 演示文稿创作工具。本仓库提供 Windows 版本发布、更新说明，以及一个可独立使用的模板元数据工具包。
 
-## version.json 格式
+## 下载与安装
 
-```json
-{
-  "version": "0.9.6-pptb.3",
-  "message": "更新说明（支持换行，会作为 What's new 弹层展示）",
-  "downloads": {
-    "linux": "https://github.com/sonemeng/presentonpp-version/releases/latest",
-    "mac": "https://github.com/sonemeng/presentonpp-version/releases/latest",
-    "windows": "https://github.com/sonemeng/presentonpp-version/releases/latest"
-  }
-}
+请前往 [Releases](https://github.com/sonemeng/presentonpp-version/releases) 下载最新的 Windows 安装程序：
+
+1. 下载 `Presentonpp-<version>-installer.exe`。
+2. 右键选择“以管理员身份运行”或直接双击安装。
+3. 按安装向导完成安装并启动 Presenton++。
+4. 如 Windows 显示来自未知发布者的提示，请确认下载来源为本仓库的 GitHub Release 后再继续。
+
+每个发布版本都附带 `SHA256SUMS.txt`。可在 PowerShell 中校验下载文件：
+
+```powershell
+Get-FileHash .\Presentonpp-<version>-installer.exe -Algorithm SHA256
 ```
 
-- `version`：必须是比已装版本更新的语义化版本，否则不弹横幅。
-- `message`：可选，What's new 内容。
-- `downloads.windows`：可选，横幅下载按钮的跳转地址（缺省用 Releases 页）。
+将输出的 SHA-256 与 `SHA256SUMS.txt` 中的值进行比对。
 
-## 发版流程
+## 更新
 
-1. 本地完成 Presenton++ 的双版本打包（干净版 + 配置版）。
-2. 更新 `version.json` 的 `version` 与 `message` 并推送到 `main`。
-3. `gh release create <版本号>` 创建 Release 并上传干净版安装程序 exe。
+应用启动后会定期检查本仓库的 `version.json`。发现新版本时，应用内会显示更新提示并跳转到 Releases 下载页。建议在更新前关闭正在编辑的演示文稿并保存工作。
 
-注意：应用每分钟轮询一次（启动 2 分钟后开始），拉取的是 `main` 分支
-`version.json` 的 raw 地址，改动推送后即时生效。
+## 本次发布
+
+`0.9.6-pptb.11` 修复了 Editorial 模板导出时的背景兼容问题，并补齐桌面端运行所需的 Sentry 依赖。
+
+## 模板元数据工具包
+
+[`template-toolkit/`](template-toolkit/) 是本仓库公开维护的独立、轻量工具包，提供：
+
+- 通用模板元数据的 JSON Schema；
+- 一个不依赖第三方包的 Python 校验脚本；
+- 可作为自动化和集成起点的示例模板元数据。
+
+它只涵盖通用的描述性模板元数据，不包含 Presenton++ 的核心应用、服务端、构建流水线、运行时组件或任何用户配置。使用方法见 [`template-toolkit/README.md`](template-toolkit/README.md)。
+
+## 反馈与安全
+
+- 功能问题和使用建议请通过 [Issues](https://github.com/sonemeng/presentonpp-version/issues) 提交。
+- 请勿在 Issue、日志、截图或讨论中发布 API Key、访问令牌、密码或个人文档内容。
+- 如需报告安全问题，请通过仓库所有者的私密渠道联系，而不要公开披露细节。
+
+## 开源范围与许可证
+
+本仓库中的文档、模板元数据工具包及其示例以 [MIT License](LICENSE) 发布。Presenton++ 的完整产品实现与发布构建不包含在本公开仓库中。
