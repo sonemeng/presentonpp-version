@@ -1,0 +1,23 @@
+{
+  "id": "product-brief",
+  "name": "Product Brief",
+  "description": "A concise product overview for stakeholders and launch discussions.",
+  "tags": ["product", "business", "minimal"],
+  "layouts": [
+    {
+      "id": "cover",
+      "name": "Cover",
+      "purpose": "Introduce the product and the presentation topic."
+    },
+    {
+      "id": "problem-solution",
+      "name": "Problem and Solution",
+      "purpose": "Connect a customer problem to the proposed solution."
+    },
+    {
+      "id": "roadmap",
+      "name": "Roadmap",
+      "purpose": "Communicate milestones and planned delivery stages."
+    }
+  ]
+}
