@@ -1,6 +1,6 @@
 {
   "version": "0.9.6-pptb.11",
-  "message": "Presenton++ 0.9.6-pptb.11\n\n- 修复 Editorial 模板导出时的背景兼容问题\n- 更新桌面端运行时依赖，提升启动稳定性\n\n完整更新说明与下载见 Releases。",
+  "message": "Presenton++ 0.9.6-pptb.11\n\n本次更新：\n- 修复 Editorial 模板导出时的背景兼容问题\n- 更新桌面端运行时依赖，提升启动稳定性\n- 编辑器字体菜单补齐内置中文字体，中文内容可直接选择思源黑体、思源宋体与霞鹜文楷\n- 旧版中文演示文稿导出时自动应用 CJK 字体兼容规则，改善 Windows 中文字体在 PPTX 中的显示效果\n- 导出过程只适配导出副本，不会修改已保存的演示文稿内容\n- 优化表格和行内文本的字体处理，提升编辑器与导出结果的一致性\n\n完整更新说明与下载见 Releases。",
   "downloads": {
     "linux": "https://github.com/sonemeng/presentonpp-version/releases/latest",
     "mac": "https://github.com/sonemeng/presentonpp-version/releases/latest",
