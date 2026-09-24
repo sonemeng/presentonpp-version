@@ -6,7 +6,8 @@ Presenton++ 是一款本地运行的 AI 演示文稿创作工具。本仓库提�
 
 请前往 [Releases](https://github.com/sonemeng/presentonpp-version/releases) 下载最新的 Windows 安装程序：
 
-1. 下载 `Presentonpp-<version>-installer.exe`。
+1. 下载 `Presenton++-<version>-Installer.exe`（安装版）或
+   `Presenton++-<version>-Portable-Configured.zip`（便携版）。
 2. 右键选择“以管理员身份运行”或直接双击安装。
 3. 按安装向导完成安装并启动 Presenton++。
 4. 如 Windows 显示来自未知发布者的提示，请确认下载来源为本仓库的 GitHub Release 后再继续。
@@ -14,7 +15,7 @@ Presenton++ 是一款本地运行的 AI 演示文稿创作工具。本仓库提�
 每个发布版本都附带 `SHA256SUMS.txt`。可在 PowerShell 中校验下载文件：
 
 ```powershell
-Get-FileHash .\Presentonpp-<version>-installer.exe -Algorithm SHA256
+Get-FileHash .\Presenton++-<version>-Installer.exe -Algorithm SHA256
 ```
 
 将输出的 SHA-256 与 `SHA256SUMS.txt` 中的值进行比对。
